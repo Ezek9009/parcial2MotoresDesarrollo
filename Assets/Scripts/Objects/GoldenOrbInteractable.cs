@@ -7,8 +7,21 @@ public class GoldenOrbInteractable : Interactable
 
     public GameObject platformPrefab;
     public Transform platformSpawnPoint;
+    public GameObject escapePoint;
     public TMPro.TMP_Text objectiveText;
     public AudioClip pickupSound;
+
+    private void Start()
+    {
+        if (escapePoint != null)
+        {
+            escapePoint.SetActive(false);
+        }
+        if (objectiveText != null)
+        {
+            objectiveText.gameObject.SetActive(false);
+        }
+    }
     public override void Interact()
     {
         StartCoroutine(PickupSequence());
@@ -39,6 +52,11 @@ public class GoldenOrbInteractable : Interactable
         if (objectiveText != null)
         {
             objectiveText.text = "¡Ve a la camioneta!";
+            objectiveText.gameObject.SetActive(true);
+        }
+        if (escapePoint!=null)
+        {
+            escapePoint.SetActive(true);
         }
 
         Destroy(gameObject);
