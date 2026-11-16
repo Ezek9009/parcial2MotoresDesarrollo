@@ -106,6 +106,8 @@ MonoBehaviour:
   escapePoint: {fileID: 0}
   objectiveText: {fileID: 0}
   pickupSound: {fileID: 8300000, guid: 44ff308fbe1d94b43bc7ee992269f5e7, type: 3}
+  escapeSound: {fileID: 8300000, guid: 54a9cd6551e3f924da7535b7bd8a3b1a, type: 3}
+  escapeAudioSource: {fileID: 0}
 --- !u!82 &1796985469466491172
 AudioSource:
   m_ObjectHideFlags: 0

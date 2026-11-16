@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 88fb8f1912b82fc44a60ffb4e91a9ab1
   - enabled: 1
+    path: Assets/Scenes/PantallaCartaIntro.unity
+    guid: 50775ce516bcce242b1b802a79e057ac
+  - enabled: 1
     path: Assets/Scenes/Playground.unity
     guid: e9017d5f96b9f09489b4b37e1d6eb914
   m_configObjects:
