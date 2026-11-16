@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -31,6 +32,8 @@ public class GuardController : MonoBehaviour
     public AudioClip runningSound;
     private GuardState currentState = GuardState.Patrol;
     private bool playerWasVisible = false;
+    [Header("Animación")]
+    public Animator animator;
 
     void Update()
     {
@@ -70,8 +73,27 @@ public class GuardController : MonoBehaviour
                 currentState = GuardState.Patrol;
             }
         }
-
+        void UpdateAnimation()
+        {
+            if (animator == null)
+            {
+                return;
+            }
+            if (currentState== GuardState.Patrol)
+            {
+                animator.SetFloat("Speed", 1f);
+            }
+            else if (currentState== GuardState.Chase)
+            {
+                animator.SetFloat("Speed", 2f);
+            }
+            else if (currentState== GuardState.Waiting)
+            {
+                animator.SetFloat("Speed", 0f);
+            }
+        }
         UpdateMovementAudio();
+        UpdateAnimation();
 
         switch (currentState)
         {

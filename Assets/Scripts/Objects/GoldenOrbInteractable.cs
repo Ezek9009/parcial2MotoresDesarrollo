@@ -10,6 +10,8 @@ public class GoldenOrbInteractable : Interactable
     public GameObject escapePoint;
     public TMPro.TMP_Text objectiveText;
     public AudioClip pickupSound;
+    public AudioClip escapeSound;
+    public AudioSource escapeAudioSource;
 
     private void Start()
     {
@@ -38,8 +40,19 @@ public class GoldenOrbInteractable : Interactable
             AudioSource.PlayClipAtPoint(pickupSound, transform.position);
             yield return new WaitForSeconds(1f);
         }
-
+        Debug.Log("Intentando reproducir audio de escape");
+        if (escapeAudioSource != null)
+        {
+           
+            escapeAudioSource.Play();
+            yield return new WaitForSeconds(escapeAudioSource.clip.length);
+        }
+        else
+        {
+            Debug.LogWarning("Escape Sound está vacío");
+        }
         GameManager.Instance.ActivateAlarm();
+        
 
         if (inventoryIcon != null)
             inventoryIcon.SetActive(true);
