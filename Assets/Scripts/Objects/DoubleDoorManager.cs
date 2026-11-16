@@ -1,38 +1,51 @@
+
 using UnityEngine;
 
 public class DoubleDoorInteractable : Interactable
 {
-    public Transform leftDoor;
-    public Transform rightDoor;
+    public Transform leftDoorPivot;
+    public Transform rightDoorPivot;
 
-    public float openDistance = 2f;
-    public float moveSpeed = 2f;
+    public float openAngle = 90f;
+    public float rotateSpeed = 90f;
 
-    private Vector3 leftClosedPosition;
-    private Vector3 rightClosedPosition;
+    public AudioSource doorAudio;
 
-    private Vector3 leftOpenPosition;
-    private Vector3 rightOpenPosition;
+    private Quaternion leftClosedRotation;
+    private Quaternion rightClosedRotation;
+
+    private Quaternion leftOpenRotation;
+    private Quaternion rightOpenRotation;
 
     private bool isOpen = false;
 
     private void Start()
     {
-        leftClosedPosition = leftDoor.position;
-        rightClosedPosition = rightDoor.position;
-        leftOpenPosition = leftDoor.position + Vector3.left * openDistance;
-        rightOpenPosition = rightClosedPosition + Vector3.right * openDistance;
+        leftClosedRotation = leftDoorPivot.localRotation;
+        rightClosedRotation = rightDoorPivot.localRotation;
+
+        leftOpenRotation = leftClosedRotation * Quaternion.Euler(0, -openAngle, 0);
+
+        rightOpenRotation = rightClosedRotation * Quaternion.Euler(0, openAngle, 0);
     }
 
     public override void Interact()
     {
         isOpen = !isOpen;
+
+        if (doorAudio != null)
+        {
+            doorAudio.Play();
+        }
     }
+
     private void Update()
     {
-        Vector3 leftTarget = isOpen ? leftOpenPosition : leftClosedPosition;
-        Vector3 rightTarget = isOpen ? rightOpenPosition : rightClosedPosition;
-        leftDoor.position = Vector3.MoveTowards(leftDoor.position, leftTarget, moveSpeed * Time.deltaTime);
-        rightDoor.position = Vector3.MoveTowards(rightDoor.position, rightTarget, moveSpeed * Time.deltaTime);
+        Quaternion leftTarget = isOpen ? leftOpenRotation : leftClosedRotation;
+        Quaternion rightTarget = isOpen ? rightOpenRotation : rightClosedRotation;
+
+        leftDoorPivot.localRotation = Quaternion.RotateTowards(leftDoorPivot.localRotation, leftTarget, rotateSpeed * Time.deltaTime);
+
+        rightDoorPivot.localRotation = Quaternion.RotateTowards(rightDoorPivot.localRotation, rightTarget, rotateSpeed * Time.deltaTime);
     }
 }
