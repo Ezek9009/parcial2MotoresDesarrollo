@@ -31,7 +31,8 @@ public class GuardController : MonoBehaviour
     public AudioClip runningSound;
     private GuardState currentState = GuardState.Patrol;
     private bool playerWasVisible = false;
-
+    [Header("Animación")]
+    public Animator animator;
     void Update()
     {
         bool canSeePlayer = CanSeePlayer();
@@ -87,6 +88,8 @@ public class GuardController : MonoBehaviour
                 Chase();
                 break;
         }
+        UpdateAnimation();
+        
     }
     bool CanSeePlayer()
     {
@@ -122,6 +125,7 @@ public class GuardController : MonoBehaviour
         if (patrolPoints == null || patrolPoints.Length == 0)
             return;
 
+        Debug.Log("Estado actual: " + currentState);
         Transform target = patrolPoints[currentPoint];
 
         if (target == null)
@@ -155,7 +159,20 @@ public class GuardController : MonoBehaviour
     {
         MoveTowardsTarget(player.position, chaseSpeed);
     }
+    void UpdateAnimation()
+    {
+        if (animator == null)
+            return;
 
+        if (currentState == GuardState.Patrol)
+            animator.SetFloat("Speed", 1f);
+
+        else if (currentState == GuardState.Chase)
+            animator.SetFloat("Speed", 2f);
+
+        else if (currentState == GuardState.Waiting)
+            animator.SetFloat("Speed", 0f);
+    }
     void MoveTowardsTarget(Vector3 target, float speed)
     {
         target.y = transform.position.y;

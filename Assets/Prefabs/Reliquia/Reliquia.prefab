@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c9b495696a8a81442afc6796c74e1ab2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -33.046
+      value: -32.931
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c9b495696a8a81442afc6796c74e1ab2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -100,12 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GoldenOrbInteractable
   interactionMessage: E - Interactuar
-  inventoryIcon: {fileID: 0}
-  platformPrefab: {fileID: 0}
-  platformSpawnPoint: {fileID: 0}
-  escapePoint: {fileID: 0}
-  objectiveText: {fileID: 0}
   pickupSound: {fileID: 8300000, guid: 44ff308fbe1d94b43bc7ee992269f5e7, type: 3}
+  sequenceManager: {fileID: 0}
 --- !u!82 &1796985469466491172
 AudioSource:
   m_ObjectHideFlags: 0
@@ -222,7 +218,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.029261313
-  m_Height: 0.038732722
+  m_Radius: 0.04889084
+  m_Height: 0.06471601
   m_Direction: 1
-  m_Center: {x: -0.0010604722, y: -0.00009070973, z: -0.0017512916}
+  m_Center: {x: -0.0033376457, y: -0.00009070973, z: -0.0017512967}

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1076502949708956554}
   - component: {fileID: 6543812491422689147}
   - component: {fileID: 6806277215409767687}
+  - component: {fileID: 9042854115861869316}
   m_Layer: 0
   m_Name: DoorR
   m_TagString: Untagged
@@ -91,6 +92,27 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &9042854115861869316
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770013322585140096}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.015174719, y: 0.0032193852, z: 0.02557537}
+  m_Center: {x: -0.0075873807, y: 0.00003347795, z: -0.000000110361704}
 --- !u!1 &1124193936164557252
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,7 +140,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1124193936164557252}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7030634, z: -0, w: 0.7111271}
+  m_LocalRotation: {x: 0, y: 0.70306593, z: 0, w: 0.7111247}
   m_LocalPosition: {x: -30.38, y: 6.4137206, z: 13.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -275,6 +297,7 @@ GameObject:
   - component: {fileID: 2134472489413366591}
   - component: {fileID: 6563721871908462255}
   - component: {fileID: 6282644373623964727}
+  - component: {fileID: 358400453855100844}
   m_Layer: 0
   m_Name: DoorL
   m_TagString: Untagged
@@ -355,6 +378,27 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &358400453855100844
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844807869230122021}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.015174719, y: 0.0031930539, z: 0.02557537}
+  m_Center: {x: 0.0075873435, y: 0.000033477834, z: -4.1070502e-19}
 --- !u!1 &4084918980708419636
 GameObject:
   m_ObjectHideFlags: 0
