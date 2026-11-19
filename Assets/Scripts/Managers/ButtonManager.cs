@@ -16,14 +16,6 @@ public class ButtonManager : MonoBehaviour
 
     public void BackToMenu()
     {
-        SceneManager.LoadScene("MainMenu");
-    }
-    public void ControlsMenu()
-    {
-        SceneManager.LoadScene("ControlsMenu");
-    }
-    public void IntroductionLetter()
-    {
-        SceneManager.LoadScene("IntroductionLetter");
+        SceneManager.LoadScene("Menu");
     }
 }
