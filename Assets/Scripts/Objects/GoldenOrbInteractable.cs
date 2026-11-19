@@ -6,6 +6,7 @@ public class GoldenOrbInteractable : Interactable
     public GoldenOrbSequenceManager sequenceManager;
 
     private bool collected = false;
+    public GameObject robotToSpwan;
 
     public override void Interact()
     {
@@ -21,6 +22,11 @@ public class GoldenOrbInteractable : Interactable
         if (pickupSound != null)
         {
             AudioSource.PlayClipAtPoint(pickupSound, transform.position);
+        }
+        if(robotToSpwan != null)
+        {
+            robotToSpwan.SetActive(true);
+            Debug.Log("El robot apareció");
         }
 
         if (sequenceManager != null)

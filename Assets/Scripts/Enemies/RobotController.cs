@@ -25,6 +25,7 @@ public class RobotController : MonoBehaviour
     public AudioClip flyingSound;
     public AudioClip alertSound;
     private bool playerWasDetected = false;
+    
     private void Start()
     {
         robotRenderer = GetComponent<Renderer>();
