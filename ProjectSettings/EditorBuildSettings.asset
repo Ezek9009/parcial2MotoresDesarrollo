@@ -12,11 +12,20 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 88fb8f1912b82fc44a60ffb4e91a9ab1
   - enabled: 1
+    path: Assets/Scenes/ControlsMenu.unity
+    guid: 246dada397660a04fb55ccd025f60c4d
+  - enabled: 1
     path: Assets/Scenes/IntroductionLetter.unity
     guid: b134844cccaca1744bf3811386f69340
   - enabled: 1
     path: Assets/Scenes/Playground.unity
     guid: e9017d5f96b9f09489b4b37e1d6eb914
+  - enabled: 1
+    path: Assets/Scenes/Victory.unity
+    guid: c0a1f6dca5fbc614c88b55f2d6680d06
+  - enabled: 1
+    path: Assets/Scenes/Derrota 1.0.unity
+    guid: b28b9bc314735824f80af603848a484b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
